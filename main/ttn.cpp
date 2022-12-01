@@ -332,7 +332,9 @@ void ttn_join(void) {
   // https://github.com/TheThingsNetwork/gateway-conf/blob/master/AU-global_conf.json
   // LMIC_selectSubBand(1);
   // after 2022-11-17 Helium switched to DualPlan using FSB6 CH 40-47 (923.2 - 924.6 MHz uplink)
-  LMIC_selectSubBand(5);
+  LMIC_selectSubBand(5);   // ch40-47
+  LMIC_disableChannel(40); // prevent overlap AS923 ch0
+  LMIC_disableChannel(41); // prevent overlap AS923 ch1
 
 #endif
 

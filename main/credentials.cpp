@@ -30,16 +30,19 @@ in the Console, then click the arrows to expand the values with comma separators
 */
 
 // Note: If all values are zero, the DevEUI will be generated automatically based on the device macaddr [Recommended!]
-uint8_t DEVEUI[8] = {
-    /* lsb */ 0, 0, 0, 0, 0, 0, 0, 0
+uint8_t DEVEUI[8] = { 
+    // lsb order
+    0x85, 0x31, 0xF3, 0x89, 0x81, 0xF9, 0x81, 0x60
     }; 
 
 // This value is commonly shared between many devices of the same type or server.
-const uint8_t PROGMEM APPEUI[8] = {
-    /* lsb */ 0xA0, 0x2E, 0x8E, 0x90, 0xBF, 0xF9, 0x81, 0x60
+const uint8_t PROGMEM APPEUI[8] = { 
+    // lsb order
+    0x73, 0xC0, 0x73, 0x8A, 0x9E, 0xF9, 0x81, 0x60
     };  
 
 // The key shown here is the Semtech default key.  You should probably change it to a lesser-known (random) value
-const uint8_t PROGMEM APPKEY[16] = {
-    /* msb */ 0xCF, 0x4B, 0x3E, 0x8F, 0x8F, 0xCB, 0x77, 0x9C, 0x8E, 0x1C, 0xAE, 0xE3, 0x11, 0x71, 0x2A, 0xE5
+const uint8_t PROGMEM APPKEY[16] = { 
+    // msb order
+    0xAA, 0xCE, 0xFF, 0x08, 0x21, 0x96, 0xB9, 0x48, 0xA0, 0xBB, 0x0F, 0x4A, 0x6E, 0xA0, 0x0E, 0x4C
     }; 

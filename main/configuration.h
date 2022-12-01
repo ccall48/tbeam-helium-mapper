@@ -226,3 +226,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define GPS_POWER_CTRL_CH 3
 #define LORA_POWER_CTRL_CH 2
 #define PMU_IRQ 35
+
+#define LMIC_DEBUG_LEVEL 0
+
+// Select the payload format. Change on TTN as well. Only uncomment one.
+// #define PAYLOAD_USE_FULL
+// #define PAYLOAD_USE_CAYENNE
+#define PAYLOAD_USE_MAPPER
+//#define SINGLE_CHANNEL_GATEWAY 0
