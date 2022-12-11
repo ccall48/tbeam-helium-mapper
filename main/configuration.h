@@ -47,8 +47,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // If we are not moving at least MIN_DIST meters away from the last uplink, when should we send a redundant
 // Mapper Uplink from the same location?  This Heartbeat or ping isn't all that important for mapping, but might be
 // useful for time-at-location tracking or other monitoring.  You can safely set this value very high.
-#define STATIONARY_TX_INTERVAL (5 * 60)  // Send one uplink at least once every N seconds
-#define NEVER_REST 0                     // Change to 1 if you want to always send at THIS rate, with no slowing or sleeping.
+#define STATIONARY_TX_INTERVAL (10 * 60)  // Send one uplink at least once every N seconds
+#define NEVER_REST 1                     // Change to 1 if you want to always send at THIS rate, with no slowing or sleeping.
 
 // After being stationary for a long while, we move to a slower heartbeat interval:
 #define REST_WAIT           (20 * 60)  // If we still haven't moved in this many seconds, start sending even slower..
@@ -90,7 +90,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // Spreading Factor (Data Rate) determines how long each 11-byte Mapper Uplink is on-air, and how observable it is.
 // SF10 is about two seconds per packet, and the highest range, while SF7 is a good compromise
 // for moving vehicles and reasonable mapping observations.
-#define LORAWAN_SF DR_SF7  // Spreading factor (recommended DR_SF7 for network map purposes)
+#define LORAWAN_SF DR_SF10  // Spreading factor (recommended DR_SF7 for network map purposes)
 
 // Deadzone defines a circular area where no map packets will originate.
 // This is useful to avoid sending many redundant packets in your own driveway or office, or just for local privacy.
